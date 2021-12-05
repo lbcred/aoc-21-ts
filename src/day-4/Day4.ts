@@ -1,19 +1,26 @@
 import TxtParser from "../tools/TxtParser/TxtParser";
 import BingoGame from "./Bingo/BingoGame";
 
-const {numberOrder,boards} = TxtParser.bingoGame('src/day-4/input.txt')
+function Day4() {
+    const {numberOrder, boards} = TxtParser.bingoGame('src/day-4/input.txt')
 
-const bingoGame = new BingoGame(numberOrder, boards)
-const winner = bingoGame.findWinner()
 
-const score1 = winner.sumOfAllUnmarked*winner.winNumber;
+    const bingoGame = new BingoGame(numberOrder, boards)
+    const winner = bingoGame.findWinner()
 
-console.log("Part 1 - " + score1)
+    const score1 = winner.sumOfAllUnmarked * winner.winNumber;
 
-const loser = bingoGame.findLoser()
+    console.log("Part 1 - " + score1)
 
-const score2 = loser.sumOfAllUnmarked*loser.winNumber
+    const loser = bingoGame.findLoser()
 
-console.log("Part 2 - " + score2)
+    const score2 = loser.sumOfAllUnmarked * loser.winNumber
 
-export {score1, score2}
+    console.log("Part 2 - " + score2)
+
+    return {score1, score2}
+}
+
+Day4()
+
+export default Day4

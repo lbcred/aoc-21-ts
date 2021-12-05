@@ -28,6 +28,22 @@ class TxtParser {
         })
         return {numberOrder, boards}
     }
+    static gridLines(filePath: string){
+        let text:string;
+        text = fs.readFileSync(filePath, 'utf8')
+        let gridLines:number[][][]
+        gridLines = text
+            .split(/\n/)
+            .map(
+                line => line
+                    .split(' -> ')
+                    .map(point => point
+                        .split(',')
+                        .map(part => parseInt(part))
+                    )
+            )
+        return gridLines
+    }
 }
 
 export default TxtParser
