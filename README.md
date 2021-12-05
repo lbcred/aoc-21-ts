@@ -6,4 +6,4 @@
 
 `npm run build` - build the js files in /dist.
 
-`node dist/day-x/DayX.js` - run a specific day in terminal.
+`npm run day {number}` - run a specific day in terminal.
