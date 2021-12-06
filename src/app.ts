@@ -2,6 +2,7 @@ import express from 'express';
 import Day3 from "./day-3/Day3";
 import Day4 from "./day-4/Day4";
 import Day5 from "./day-5/Day5";
+import Day6 from "./day-6/Day6";
 
 const app = express();
 
@@ -22,6 +23,11 @@ app.get('/4', (req, res) => {
 
 app.get('/5', (req, res) => {
   const {part1, part2} = Day5()
+  res.send('Part 1 - ' + (part1.toString()) + '\nPart 2 - ' + (part2.toString()))
+})
+
+app.get('/6', (req, res) => {
+  const {part1, part2} = Day6()
   res.send('Part 1 - ' + (part1.toString()) + '\nPart 2 - ' + (part2.toString()))
 })
 

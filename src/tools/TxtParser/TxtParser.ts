@@ -44,6 +44,11 @@ class TxtParser {
             )
         return gridLines
     }
+    static toArray(filePath: string){
+        let text:string;
+        text = fs.readFileSync(filePath, 'utf8')
+        return text.split(",").map(str => parseInt(str))
+    }
 }
 
 export default TxtParser
