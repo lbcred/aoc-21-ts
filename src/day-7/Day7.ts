@@ -31,6 +31,7 @@ function Day7(){
         }
     }
 
+    const part1 = bestCost;
     console.log("Part - 1 " + bestCost)
 
     bestCost=3000000000000
@@ -47,9 +48,11 @@ function Day7(){
         }
     }
 
+    const part2 = bestCost;
+
     console.log("Part - 2 " + bestCost)
 
-    return 0
+    return {part1, part2}
 }
 
 Day7()
